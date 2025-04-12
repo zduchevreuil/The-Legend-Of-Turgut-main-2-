@@ -30,7 +30,7 @@ function drawGame() {
     downStay: new Image(),
   };
 
-  //turgut image qui attaque
+  //turgut image qui attaque 
 
   const turgutImagesAttaque = {
     rightAtt: new Image(),
