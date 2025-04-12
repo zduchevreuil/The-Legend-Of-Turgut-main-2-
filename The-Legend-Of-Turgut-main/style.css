@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  image-rendering: pixelated;
+}
+
+/* installation de la font en local */
+@font-face {
+  font-family: "retroFont";
+  src: url("font/retro.otf") format("opentype");
+}
+/* BODY */
+body {
+  font-family: "retroFont";
+  background-color: rgb(57, 57, 57);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+/* SCREENGAME représente l'ensemble du l'écran du jeu qui contient tout les éléments*/
+#screenGame {
+  position: relative;
+  height: 240px;
+  width: 240px;
+  background-color: rgba, 0 (0, 0, 0);
+  border: 2px solid #c4c3c3;
+  margin: auto;
+  z-index: 20;
+}
+/* TitleScreen représente l'écran titre du jeu, il est composé de 3 titres*/
+#titleScreen {
+  background-image: url("./ImagesTitleScreen/pixelTitleScreen3.png");
+  width: 236px;
+  height: 236px;
+  overflow: hidden;
+  background-size: contain;
+  text-shadow: 0 0 5px#ffffff;
+  opacity: 1;
+}
+#titreFixe {
+  padding-top: 60px;
+  padding-left: 5px;
+  color: #45a4b4;
+  font-size: 20px;
+  position: absolute;
+}
+#titreFixe2 {
+  padding-left: 28px;
+  color: #0c6a96;
+  font-size: 40px;
+  position: absolute;
+  top: 75px;
+}
+#titreClignote {
+  color: #ffffff;
+  font-size: 8px;
+  position: absolute;
+  top: 140px;
+  left: 18px;
+}
+
+/* JOUEUR DU JEU AU MILIEU DE L ECRAN */
+#Turgut {
+  background-image: url("./ImagesOfTurgut/AllImages.png");
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 118px;
+  left: 118px;
+  opacity: 1;
+  z-index: -1;
+  position: absolute;
+}
+
+/* HISTOIRE INTRO */
+#historyScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 7px;
+  margin: 157px 5px 5px 5px;
+  font-size: 10px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  background-color: brown;
+  z-index: 200;
+  font-size: 6px;
+  border: #ffffff 2px solid;
+}
+
+/*MAP*/
+#mapOfLand {
+  position: absolute;
+  opacity: 1;
+  top: 0px;
+  left: 0px;
+  background-image: url("./imageOfMap/map.png");
+  width: 236px;
+  height: 236px;
+  z-index: -2;
+}
+/* HistoryScreen */
+
+/* AFFICHAGE DE LA MANETTE */
+#halfJoystick {
+  height: 100%;
+  width: 400px;
+  background-color: rgb(57, 57, 57);
+  position: static;
+}
+.leftJoystick {
+  width: 150px;
+  height: 455px;
+  background-color: #000000;
+  margin: auto;
+  padding: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+#crossOfHalfJoystick {
+  width: 135px;
+  height: 130px;
+  background-image: url("./imagesOfJoystick/97324.png");
+  background-position: 0px 0px;
+  margin-left: 160px;
+  margin-right: 0;
+  margin-top: 125px;
+  margin-bottom: 125px;
+  transform: scale(1.2);
+}
+#directionOfCross {
+  width: 36px;
+  height: 36px;
+  background-color: #949494;
+  border-radius: 35px;
+  position: absolute;
+  top: 46px;
+  left: 46px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.rightJoystick {
+  width: 150px;
+  height: 455px;
+  background-color: #000000;
+  margin: auto;
+  padding: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+#buttonAOfHalfJoystick {
+  width: 140px;
+  height: 130px;
+  background-image: url("./imagesOfJoystick/97324.png");
+  background-position: -262px 0px;
+  margin-left: 80px;
+  margin-right: 80px;
+  padding: 0;
+}
+#buttonBOfHalfJoystick {
+  width: 140px;
+  height: 130px;
+  background-image: url("./imagesOfJoystick/97324.png");
+  background-position: -370px 130px;
+  margin-left: 10px;
+  padding: 0;
+}
+#buttonXOfHalfJoystick {
+  width: 140px;
+  height: 130px;
+  background-image: url("./imagesOfJoystick/97324.png");
+  background-position: -510px 130px;
+  margin-right: 10px;
+  padding: 0;
+}
+#buttonYOfHalfJoystick {
+  width: 140px;
+  height: 130px;
+  background-image: url("./imagesOfJoystick/97324.png");
+  background-position: -645px 130px;
+  margin-left: 80px;
+  margin-right: 80px;
+  padding: 0;
+}
+
+.LTLBButton {
+  width: 337px;
+  height: 300px;
+}
+.LBButton {
+  width: 230px;
+  height: 130px;
+  background-image: url("./imagesOfJoystick/97324.png");
+  background-position: 0px -130px;
+  margin-left: 70px;
+}
+.LTButton {
+  width: 127px;
+  height: 130px;
+  background-image: url("./imagesOfJoystick/97324.png");
+  background-position: -650px -130px;
+  margin-left: 180px;
+  margin-top: -5px;
+}
+
+.RTRBButton {
+  width: 337px;
+  height: 300px;
+}
+.RTButton {
+  width: 127px;
+  height: 130px;
+  background-image: url("./imagesOfJoystick/97324.png");
+  background-position: -810px 0px;
+  margin-left: 50px;
+}
+.RBButton {
+  width: 230px;
+  height: 130px;
+  background-image: url("./imagesOfJoystick/97324.png");
+  background-position: 0px 130px;
+  margin-left: 50px;
+}
