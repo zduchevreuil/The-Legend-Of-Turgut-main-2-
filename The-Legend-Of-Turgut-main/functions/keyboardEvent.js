@@ -3,6 +3,8 @@ let carte = document.getElementById("mapOfLand");
 let topValue = 0;
 let leftValue = 0;
 
+// const currentSrc = turgut.src;
+
 
 function keyboardEvent() {
     addEventListener("keydown", function (event) {
@@ -11,42 +13,92 @@ function keyboardEvent() {
         
         if (event.key === "z") {
             // Code pour le mouvement vers le haut
+
             console.log("Mouvement vers le haut");
-            turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/12.png"}')`
-            topValue += 1;
-            carte.style.top = topValue + "px";
-            // avancer la carte
+            turgut.style.backgroundImage = `url('${"../The-Legend-Of-Turgut-main/ImagesOfTurgut/12.png"}')`
+            // avancer la carte en fonction de turgut
+
+            carte.style.positionY = topValue + "px";
+            topValue += 2;
         } else if (event.key === "s") {
             // Code pour le mouvement vers le bas
             console.log("Mouvement vers le bas");
-            turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/71.png"}')`
+            turgut.style.backgroundImage = `url('${"../The-Legend-Of-Turgut-main/ImagesOfTurgut/71.png"}')`
             // avancer 
-            topValue += -1;
-            carte.style.top = topValue + "px";
+            topValue += -2;
+            carte.style.positionY = topValue + "px";
         } else if (event.key === "q") {
             // Code pour le mouvement vers la gauche
             console.log("Mouvement vers la gauche");
-            turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/32.png"}')`
+            turgut.style.backgroundImage = `url('${"../The-Legend-Of-Turgut-main/ImagesOfTurgut/32.png"}')`
 
-            leftValue += 1;
+            leftValue += 2;
             carte.style.left = leftValue + "px";
         } else if (event.key === "d") {
             // Code pour le mouvement vers la droite
             console.log("Mouvement vers la droite");
-            turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/03.png"}')`
+            turgut.style.backgroundImage = `url('${"../The-Legend-Of-Turgut-main/ImagesOfTurgut/03.png"}')`
 
-            leftValue += -1;
+            leftValue += -2;
             carte.style.left = leftValue + "px";
         }
 
         // uiop et jklm
 
-        if (event.key === "u") {
+        if (event.key === "u") { 
             // Code pour le a
             console.log("a");
+            // BAS
+            if(directionDeTurgut === "bas"){
+                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/26.png"}')`;
+                console.log("attaque en bas");
+            }
+            
+
+            // haut
+            if(directionDeTurgut === "haut"){
+                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/36.png"}')`;
+                console.log("attaque en haut");
+            }
+
+            // droite
+            if(directionDeTurgut === "droite"){
+                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/56.png"}')`;
+                console.log("attaque a droite");
+            }
+
+
+            //gauche
+            if(directionDeTurgut === "gauche"){
+                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/46.png"}')`;
+                console.log("attaque a gauche");
+            }
+            
+            
+
         } else if (event.key === "i") {
             // Code pour le b
             console.log("b");
+            if(directionDeTurgut === "bas"){
+                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/13.png"}')`;
+            }
+            
+
+            // haut
+            if(directionDeTurgut === "haut"){
+                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/53.png"}')`;
+            }
+
+            // droite
+            if(directionDeTurgut === "droite"){
+                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/73.png"}')`;
+            }
+
+
+            //gauche
+            if(directionDeTurgut === "gauche"){
+                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/24.png"}')`;
+            }
         } else if (event.key === "o") {
             // Code pour le x
             console.log("x");
@@ -69,10 +121,102 @@ function keyboardEvent() {
             // Code pour le mouvement vers la droite
             console.log("lb");
         }
+        
     }
     );
 
+    
+
 }
+
+
+
+let directionDeTurgut = "vide";
+
+function keyboardEvent2() {
+    addEventListener("keyup", function (eventUP) {
+        if (eventUP.key === "z") {
+            directionDeTurgut = "haut"
+            console.log("Haut a été lacher")
+            turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/12.png"}')`
+            console.log(directionDeTurgut)
+        }
+        if (eventUP.key === "s") {
+            directionDeTurgut = "bas"
+            console.log("Bas a été lacher")
+            turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/71.png"}')`
+            console.log(directionDeTurgut)
+        }
+        if (eventUP.key === "q") {
+            directionDeTurgut = "gauche"
+            console.log("Gauche a été lacher")
+            turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/32.png"}')`
+            console.log(directionDeTurgut)
+        }
+        if (eventUP.key === "d") {
+            directionDeTurgut = "droite"
+            console.log("Droite a été lacher")
+            turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/03.png"}')`
+            console.log(directionDeTurgut)
+        }
+
+
+        // protection avec le bouclier
+
+        if (event.key === "i") {
+            console.log("b a été lacher");
+                if(directionDeTurgut === "bas"){
+                    turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/71.png"}')`;
+                }
+                
+    
+                // haut
+                if(directionDeTurgut === "haut"){
+                    turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/12.png"}')`;
+                }
+    
+                // droite
+                if(directionDeTurgut === "droite"){
+                    turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/03.png"}')`;
+                }
+    
+    
+                //gauche
+                if(directionDeTurgut === "gauche"){
+                    turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/32.png"}')`;
+                }
+
+        };
+
+        if (event.key === "u") {
+            if(directionDeTurgut === "bas"){
+                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/71.png"}')`;
+            }
+            
+
+            // haut
+            if(directionDeTurgut === "haut"){
+                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/12.png"}')`;
+            }
+
+            // droite
+            if(directionDeTurgut === "droite"){
+                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/03.png"}')`;
+            }
+
+
+            //gauche
+            if(directionDeTurgut === "gauche"){
+                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/32.png"}')`;
+            }
+        }
+
+
+    })};
+
+keyboardEvent2();
+
+
 
 
 // les images
