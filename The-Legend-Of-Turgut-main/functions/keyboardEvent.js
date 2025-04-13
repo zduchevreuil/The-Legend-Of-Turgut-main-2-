@@ -2,6 +2,7 @@ let turgut = document.getElementById("Turgut");
 let carte = document.getElementById("mapOfLand");
 let topValue = 0;
 let leftValue = 0;
+let directionDeTurgut = "vide";
 
 // const currentSrc = turgut.src;
 
@@ -18,7 +19,7 @@ function keyboardEvent() {
             turgut.style.backgroundImage = `url('${"../The-Legend-Of-Turgut-main/ImagesOfTurgut/12.png"}')`
             // avancer la carte en fonction de turgut
 
-            carte.style.positionY = topValue + "px";
+            carte.style.backgroundPositionY = topValue + "px";
             topValue += 2;
         } else if (event.key === "s") {
             // Code pour le mouvement vers le bas
@@ -26,57 +27,59 @@ function keyboardEvent() {
             turgut.style.backgroundImage = `url('${"../The-Legend-Of-Turgut-main/ImagesOfTurgut/71.png"}')`
             // avancer 
             topValue += -2;
-            carte.style.positionY = topValue + "px";
+            carte.style.backgroundPositionY = topValue + "px";
         } else if (event.key === "q") {
             // Code pour le mouvement vers la gauche
             console.log("Mouvement vers la gauche");
             turgut.style.backgroundImage = `url('${"../The-Legend-Of-Turgut-main/ImagesOfTurgut/32.png"}')`
 
             leftValue += 2;
-            carte.style.left = leftValue + "px";
+            carte.style.backgroundPositionX = leftValue + "px";
         } else if (event.key === "d") {
             // Code pour le mouvement vers la droite
             console.log("Mouvement vers la droite");
             turgut.style.backgroundImage = `url('${"../The-Legend-Of-Turgut-main/ImagesOfTurgut/03.png"}')`
 
             leftValue += -2;
-            carte.style.left = leftValue + "px";
+            carte.style.backgroundPositionX = leftValue + "px";
         }
 
         // uiop et jklm
-
-        if (event.key === "u") { 
-            // Code pour le a
-            console.log("a");
-            // BAS
-            if(directionDeTurgut === "bas"){
-                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/26.png"}')`;
-                console.log("attaque en bas");
-            }
+        let conditionAttaque = false;//  on pourra changer et mettres : si dans son inventaire il y a une épée (ou hache) alor la variable est true
+        if(conditionAttaque) {
+            if (event.key === "u") { 
+                // Code pour le a
+                console.log("a");
+                // BAS
+                if(directionDeTurgut === "bas"){
+                    turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/26.png"}')`;
+                    console.log("attaque en bas");
+                }
+                
+    
+                // haut
+                if(directionDeTurgut === "haut"){
+                    turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/36.png"}')`;
+                    console.log("attaque en haut");
+                }
+    
+                // droite
+                if(directionDeTurgut === "droite"){
+                    turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/56.png"}')`;
+                    console.log("attaque a droite");
+                }
+    
+    
+                //gauche
+                if(directionDeTurgut === "gauche"){
+                    turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/46.png"}')`;
+                    console.log("attaque a gauche");
+                }
+        }
+            
             
 
-            // haut
-            if(directionDeTurgut === "haut"){
-                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/36.png"}')`;
-                console.log("attaque en haut");
-            }
-
-            // droite
-            if(directionDeTurgut === "droite"){
-                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/56.png"}')`;
-                console.log("attaque a droite");
-            }
-
-
-            //gauche
-            if(directionDeTurgut === "gauche"){
-                turgut.style.backgroundImage = `url('${"../../The-Legend-Of-Turgut-main/ImagesOfTurgut/46.png"}')`;
-                console.log("attaque a gauche");
-            }
-            
-            
-
-        } else if (event.key === "i") {
+        } if (event.key === "i") {
             // Code pour le b
             console.log("b");
             if(directionDeTurgut === "bas"){
@@ -131,7 +134,7 @@ function keyboardEvent() {
 
 
 
-let directionDeTurgut = "vide";
+
 
 function keyboardEvent2() {
     addEventListener("keyup", function (eventUP) {
